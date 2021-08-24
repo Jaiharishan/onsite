@@ -1,5 +1,5 @@
-const startBtn = document.getElementById("start");
-const stopBtn = document.getElementById("stop");
+const startBtn = document.querySelector("#start");
+const stopBtn = document.querySelector("#stop");
 const video = document.querySelector("video");
 
 // initalizing recorder and stream
@@ -26,17 +26,17 @@ let startRecording = async () => {
  
 // event listener for start btn
 startBtn.addEventListener("click", () => {
-  startBtn.setAttribute("disabled", true);
-  stop.removeAttribute("disabled");
+//   startBtn.setAttribute("disabled", true);
+  stopBtn.removeAttribute("disabled");
 
   startRecording();
 });
 
 
 // event listener for stop btn
-stop.addEventListener("click", () => {
-  stop.setAttribute("disabled", true);
-  startBtn.removeAttribute("disabled");
+stopBtn.addEventListener("click", () => {
+  stopBtn.setAttribute("disabled", true);
+//   startBtn.removeAttribute("disabled");
 
   recorder.stop();
   stream.getVideoTracks()[0].stop();
